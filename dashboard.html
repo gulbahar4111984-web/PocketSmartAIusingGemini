@@ -1,0 +1,433 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard · PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<section class="dashboard-head">
+
+    <div>
+
+        <p class="eyebrow">
+            YOUR PLANNERS
+        </p>
+
+        <h1 id="welcome">
+            PocketSmart AI
+        </h1>
+
+        <p>
+            Choose a planner and keep
+            the result within your
+            stated budget.
+        </p>
+
+    </div>
+
+
+    <div
+        class="pill"
+        id="sessionStatus"
+    >
+        Checking session...
+    </div>
+
+</section>
+
+
+<section class="planner-tabs">
+
+    <button
+        class="tab active"
+        data-tab="home"
+    >
+        Home
+    </button>
+
+    <button
+        class="tab"
+        data-tab="party"
+    >
+        Party
+    </button>
+
+    <button
+        class="tab"
+        data-tab="jewelry"
+    >
+        Jewelry
+    </button>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- HOME PLANNER -->
+<!-- ===================================================== -->
+
+<section
+    id="home"
+    class="planner-panel active card"
+>
+
+    <h2>
+        Home Interior Planner
+    </h2>
+
+    <form id="homeForm">
+
+        <div class="form-grid">
+
+            <label>
+                Budget (INR)
+
+                <input
+                    name="budget"
+                    type="number"
+                    min="1"
+                    required
+                    placeholder="50000"
+                >
+            </label>
+
+
+            <label>
+                Style
+
+                <input
+                    name="style"
+                    value="modern"
+                    placeholder="modern"
+                >
+            </label>
+
+
+            <label class="wide">
+
+                Rooms
+                (comma separated)
+
+                <input
+                    name="rooms"
+                    placeholder="Living Room, Bedroom"
+                    required
+                >
+
+            </label>
+
+
+            <label class="wide">
+
+                Priorities
+
+                <input
+                    name="priorities"
+                    placeholder="storage, lighting, comfort"
+                >
+
+            </label>
+
+
+            <label class="wide">
+
+                Notes
+
+                <textarea
+                    name="notes"
+                    placeholder="Tell PocketSmart about your needs..."
+                ></textarea>
+
+            </label>
+
+        </div>
+
+
+        <button class="btn">
+
+            Generate Home Plan
+
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- PARTY PLANNER -->
+<!-- ===================================================== -->
+
+<section
+    id="party"
+    class="planner-panel card"
+>
+
+    <h2>
+        Party Budget Planner
+    </h2>
+
+
+    <form id="partyForm">
+
+        <div class="form-grid">
+
+            <label>
+                Budget (INR)
+
+                <input
+                    name="budget"
+                    type="number"
+                    min="1"
+                    required
+                    placeholder="50000"
+                >
+            </label>
+
+
+            <label>
+                Guests
+
+                <input
+                    name="guests"
+                    type="number"
+                    min="1"
+                    required
+                    placeholder="50"
+                >
+            </label>
+
+
+            <label>
+                Event type
+
+                <input
+                    name="event_type"
+                    placeholder="Birthday"
+                    required
+                >
+            </label>
+
+
+            <label>
+                Venue
+
+                <input
+                    name="venue"
+                    value="Not decided"
+                >
+            </label>
+
+
+            <label>
+                Food preference
+
+                <input
+                    name="food_preference"
+                    value="Mixed"
+                >
+            </label>
+
+
+            <label>
+                City
+
+                <input
+                    name="city"
+                    placeholder="Dindigul"
+                >
+            </label>
+
+
+            <label class="wide">
+
+                Notes
+
+                <textarea
+                    name="notes"
+                    placeholder="Any special requirements?"
+                ></textarea>
+
+            </label>
+
+        </div>
+
+
+        <button class="btn">
+
+            Generate Party Plan
+
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- JEWELRY PLANNER -->
+<!-- ===================================================== -->
+
+<section
+    id="jewelry"
+    class="planner-panel card"
+>
+
+    <h2>
+        Jewelry Budget Planner
+    </h2>
+
+
+    <form
+        id="jewelryForm"
+        enctype="multipart/form-data"
+    >
+
+        <div class="form-grid">
+
+            <label>
+                Budget (INR)
+
+                <input
+                    name="budget"
+                    type="number"
+                    min="1"
+                    required
+                    placeholder="20000"
+                >
+            </label>
+
+
+            <label>
+                Occasion
+
+                <input
+                    name="occasion"
+                    placeholder="Wedding reception"
+                    required
+                >
+            </label>
+
+
+            <label>
+                Style
+
+                <input
+                    name="style"
+                    value="elegant"
+                >
+            </label>
+
+
+            <label>
+                Metal
+
+                <input
+                    name="metal"
+                    value="Any"
+                >
+            </label>
+
+
+            <label>
+                Outfit color
+
+                <input
+                    name="outfit_color"
+                    value="Unknown"
+                >
+            </label>
+
+
+            <label>
+
+                Outfit image
+
+                <input
+                    name="outfit_image"
+                    type="file"
+                    accept="
+                        image/png,
+                        image/jpeg,
+                        image/webp
+                    "
+                >
+
+            </label>
+
+
+            <label class="wide">
+
+                Notes
+
+                <textarea
+                    name="notes"
+                    placeholder="Tell us about your outfit or preferences..."
+                ></textarea>
+
+            </label>
+
+        </div>
+
+
+        <button class="btn">
+
+            Generate Jewelry Plan
+
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- RESULT -->
+<!-- ===================================================== -->
+
+<section
+    id="result"
+    class="result"
+></section>
+
+
+<!-- ===================================================== -->
+<!-- HISTORY -->
+<!-- ===================================================== -->
+
+<section class="card">
+
+    <div class="section-row">
+
+        <h2>
+            Recommendation History
+        </h2>
+
+        <button
+            class="btn secondary small"
+            onclick="loadHistory()"
+        >
+            Refresh
+        </button>
+
+    </div>
+
+
+    <div id="history">
+
+        Loading...
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script src="/static/dashboard.js"></script>
+
+{% endblock %}

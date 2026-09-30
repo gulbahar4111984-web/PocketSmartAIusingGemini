@@ -1,0 +1,540 @@
+:root {
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: #182230;
+    background: #f5f7fb;
+
+    line-height: 1.5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f7fb;
+}
+
+a {
+    color: #5a43d8;
+}
+
+.nav {
+    height: 68px;
+    background: #ffffff;
+    border-bottom: 1px solid #e4e8ef;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5vw;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 5;
+}
+
+.brand {
+    font-size: 1.25rem;
+    font-weight: 800;
+
+    color: #182230;
+
+    text-decoration: none;
+}
+
+.brand span {
+    color: #6d4aff;
+}
+
+.nav nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav a,
+.link-btn {
+    color: #526071;
+
+    text-decoration: none;
+
+    border: 0;
+    background: none;
+
+    font: inherit;
+
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 48px 20px;
+}
+
+.hero {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr;
+
+    gap: 28px;
+
+    align-items: center;
+
+    padding:
+        40px 0
+        60px;
+}
+
+.hero h1 {
+    font-size:
+        clamp(
+            2.6rem,
+            6vw,
+            5rem
+        );
+
+    line-height: 1;
+
+    margin:
+        10px 0
+        22px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+
+    color: #657285;
+
+    max-width: 650px;
+}
+
+.eyebrow {
+    letter-spacing: 0.12em;
+
+    font-size: 0.78rem !important;
+
+    font-weight: 800;
+
+    color: #6d4aff !important;
+}
+
+.hero-card {
+    background: #1d2230;
+
+    color: #ffffff;
+
+    border-radius: 28px;
+
+    padding: 34px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(29, 34, 48, 0.13);
+}
+
+.hero-card > div {
+    font-size: 4rem;
+
+    font-weight: 900;
+}
+
+.hero-card p {
+    color: #c9ced8;
+}
+
+.actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+.btn {
+    border: 0;
+
+    background: #6d4aff;
+
+    color: #ffffff;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    display: inline-block;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn.secondary {
+    background: #e9e7ff;
+
+    color: #4e39c7;
+}
+
+.btn.small {
+    padding: 8px 12px;
+
+    font-size: 0.85rem;
+}
+
+.grid {
+    display: grid;
+
+    gap: 18px;
+}
+
+.three {
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+}
+
+.card {
+    background: #ffffff;
+
+    border: 1px solid #e4e8ef;
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(29, 34, 48, 0.03);
+
+    margin-bottom: 22px;
+}
+
+.auth {
+    max-width: 480px;
+
+    margin:
+        50px auto;
+}
+
+.auth form,
+.planner-panel form {
+    display: grid;
+
+    gap: 16px;
+}
+
+label {
+    display: grid;
+
+    gap: 7px;
+
+    font-weight: 650;
+
+    color: #3e4b5d;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    border:
+        1px solid #d7dde7;
+
+    border-radius: 10px;
+
+    padding: 11px 12px;
+
+    font: inherit;
+
+    background: #ffffff;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: #6d4aff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(109, 74, 255, 0.1);
+}
+
+textarea {
+    min-height: 90px;
+
+    resize: vertical;
+}
+
+.message {
+    min-height: 24px;
+}
+
+.dashboard-head {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 24px;
+}
+
+.dashboard-head h1 {
+    margin: 0;
+
+    font-size: 2.5rem;
+}
+
+.pill {
+    background: #e9e7ff;
+
+    color: #4e39c7;
+
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+}
+
+.planner-tabs {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 14px;
+
+    overflow-x: auto;
+}
+
+.tab {
+    border:
+        1px solid #dfe4ed;
+
+    background: #ffffff;
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.tab.active {
+    background: #1d2230;
+
+    color: #ffffff;
+}
+
+.planner-panel {
+    display: none;
+}
+
+.planner-panel.active {
+    display: block;
+}
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+    gap: 16px;
+
+    margin-bottom: 18px;
+}
+
+.wide {
+    grid-column: 1 / -1;
+}
+
+.result {
+    margin: 22px 0;
+}
+
+.recommendation-head {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.metric {
+    font-size: 1.5rem;
+
+    font-weight: 800;
+}
+
+.item-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+    gap: 14px;
+}
+
+.item {
+    border:
+        1px solid #e4e8ef;
+
+    border-radius: 14px;
+
+    padding: 16px;
+
+    background: #ffffff;
+}
+
+.item h3 {
+    margin:
+        0 0 5px;
+}
+
+.item .price {
+    font-weight: 800;
+
+    margin-bottom: 4px;
+}
+
+.item a {
+    font-size: 0.9rem;
+
+    color: #5a43d8;
+
+    text-decoration: none;
+
+    font-weight: 650;
+}
+
+.item a:hover {
+    text-decoration: underline;
+}
+
+.history-row {
+    border-top:
+        1px solid #edf0f5;
+
+    padding: 14px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.footer {
+    text-align: center;
+
+    color: #7a8595;
+
+    padding: 35px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.error {
+    color: #b42318;
+
+    background: #fff0f0;
+
+    padding: 12px;
+
+    border-radius: 10px;
+}
+
+.success {
+    color: #166534;
+
+    background: #effdf3;
+
+    padding: 12px;
+
+    border-radius: 10px;
+}
+
+.section-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+@media (max-width: 760px) {
+
+    .hero,
+    .three,
+    .item-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wide {
+        grid-column: auto;
+    }
+
+    .nav {
+        padding: 0 16px;
+    }
+
+    .nav nav a:not(:last-child) {
+        display: none;
+    }
+
+    .dashboard-head {
+        align-items: start;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    .container {
+        padding: 30px 14px;
+    }
+
+    .recommendation-head {
+        flex-direction: column;
+    }
+}

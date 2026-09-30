@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>
+        {% block title %}
+        PocketSmart AI
+        {% endblock %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/styles.css"
+    >
+
+</head>
+
+<body>
+
+<header class="nav">
+
+    <a
+        class="brand"
+        href="/"
+    >
+        PocketSmart
+        <span>AI</span>
+    </a>
+
+    <nav>
+
+        <a href="/dashboard">
+            Dashboard
+        </a>
+
+        <a
+            href="/login"
+            id="loginLink"
+        >
+            Login
+        </a>
+
+        <a
+            href="/register"
+            id="registerLink"
+        >
+            Register
+        </a>
+
+        <button
+            id="logoutBtn"
+            class="link-btn hidden"
+        >
+            Logout
+        </button>
+
+    </nav>
+
+</header>
+
+
+<main class="container">
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+
+<footer class="footer">
+
+    PocketSmart AI ·
+    Budget planning assistance
+    powered by generative AI.
+
+</footer>
+
+
+<script src="/static/app.js"></script>
+
+
+{% block scripts %}
+{% endblock %}
+
+</body>
+
+</html>
